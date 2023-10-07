@@ -20,16 +20,16 @@ class Home extends CI_Controller
         // $data_url = file_get_contents($url);
         // $json = json_decode($data_url, true);
         $data = [
-            'title' => 'Museum Negeri Sumatera Utara',
+            'title' => 'SMK Negeri 7 Medan',
             'content' => "landing/index",
             // 'data_etiket' => $json,
-            'slider' => $this->M_slider->getData(),
-            'profile' => $this->M_profile->getData(),
-            'berita' => $this->M_berita->getData_toHome(),
-            'koleksigroup' => $this->M_koleksi->getkategori(),
-            'koleksidata' => $this->M_koleksi->getData(),
-            'zonadata' => $this->db->get("zona_integritas")->result(),
-            'photo_kegiatan' => $this->db->select("*")->from("kegiatan_photo")->limit(3, 0)->get()->result(),
+            // 'slider' => $this->M_slider->getData(),
+            // 'profile' => $this->M_profile->getData(),
+            // 'berita' => $this->M_berita->getData_toHome(),
+            // 'koleksigroup' => $this->M_koleksi->getkategori(),
+            // 'koleksidata' => $this->M_koleksi->getData(),
+            // 'zonadata' => $this->db->get("zona_integritas")->result(),
+            // 'photo_kegiatan' => $this->db->select("*")->from("kegiatan_photo")->limit(3, 0)->get()->result(),
         ];
         $this->load->view('landing/layout/content', $data);
     }
