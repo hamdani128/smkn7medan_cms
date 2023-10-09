@@ -11,7 +11,21 @@ function base_url(string_url) {
 $(function () {
     'use strict';
     $('#tbl_pimpinan').DataTable();
+    cekDataPimpinan();
 });
+
+
+function cekDataPimpinan() {
+    var table = document.getElementById('tbl_pimpinan');
+    var tbody = table.getElementsByTagName('tbody')[0];
+    var addButton = document.getElementById('btn-add');
+
+    if (tbody.rows.length > 0) {
+        addButton.style.display = 'none'; // Sembunyikan tombol jika ada baris dalam tabel
+    } else {
+        addButton.style.display = 'block'; // Tampilkan tombol jika tabel kosong
+    }
+}
 
 function add_pimpinan() {
     $("#my-modal").modal('show');

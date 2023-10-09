@@ -9,9 +9,9 @@
     <div class="br-pagetitle">
         <i class="icon icon ion-ios-photos-outline"></i>
         <div>
-            <h4>Informasi Data Profile Musem</h4>
+            <h4>Informasi Data Tentang Sekolah</h4>
             <p class="mg-b-0">
-                Informasi Data Profile Lengkap Museum.
+                Informasi Data Profile Lengkap Sekolah SMK NEGERI 7 MEDAN.
             </p>
         </div>
     </div><!-- d-flex -->
@@ -26,7 +26,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="button-group">
-                                    <button class="btn btn-md btn-primary" onclick="add_profile()">
+                                    <button class="btn btn-md btn-primary" id="btn-add-profile" onclick="add_profile()" style="display: block;">
                                         <i class="fa fa-plus"></i>
                                         Tambah Data
                                     </button>
@@ -67,10 +67,10 @@
                                                     <td><?= $profile->deskripsi; ?></td>
                                                     <td>
                                                         <div class="input-group">
-                                                            <button class="btn btn-md btn-warning">
+                                                            <button class="btn btn-md btn-warning" onclick="Edit_Profile('<?= $profile->id; ?>')">
                                                                 <i class="fa fa-edit"></i>
                                                             </button>
-                                                            <button class="btn btn-md btn-danger">
+                                                            <button class="btn btn-md btn-danger" onclick="Delete_Profile('<?= $profile->id; ?>')">
                                                                 <i class="fa fa-trash"></i>
                                                             </button>
                                                         </div>
@@ -125,6 +125,55 @@
                         <button class="btn btn-md btn-primary button-prevent" onclick="simpan_data_profile_baru()">
                             <i class="fa fa-save hide-text"></i>
                             <span class="hide-text">Simpan</span>
+                            <div class="spinner" style="display: none;">
+                                <img src="<?= base_url() ?>public/admin/img/loading_2.gif" alt="" style="width: 15%;height: 15%;">
+                                Loading..
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal Update -->
+<div id="my-modal-update" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h5 class="modal-title text-white" id="my-modal-title">Update Data Profile</h5>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post" id="form_profile_update" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="hidden" name="id_update" id="id_update" class="form-control">
+                                <img src="" alt="" id="img_display" style="width: 100%;height: 50%;">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Jika Anda Menginginkan Perubahan Data Gambar Harap Upload Ulang Disini,
+                                    Jika Tidak Dilanjutkan tanpa mengupload ulang data</label>
+                                <input type="file" name="file_image_update" id="file_image_update" class="form-control">
+                            </div>
+                            <label for="">Deskripsi Tetang Museum Negeri</label>
+                            <div id="summernote_update"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-md btn-warning button-prevent" onclick="update_data_profile()">
+                            <i class="fa fa-save hide-text"></i>
+                            <span class="hide-text">Update</span>
                             <div class="spinner" style="display: none;">
                                 <img src="<?= base_url() ?>public/admin/img/loading_2.gif" alt="" style="width: 15%;height: 15%;">
                                 Loading..

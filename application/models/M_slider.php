@@ -6,6 +6,6 @@ class M_slider extends CI_Model
 
     function getData()
     {
-        return $this->db->get($this->tbl_slider)->result();
+        return $this->db->order_by('id', 'DESC')->get($this->tbl_slider)->result();
     }
 }

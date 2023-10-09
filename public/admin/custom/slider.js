@@ -56,3 +56,66 @@ function Simpan_data_slider() {
         });
     }
 }
+
+function Delete_Slider(id) {
+    Swal.fire({
+        title: 'Konfirmasi',
+        text: 'Anda yakin ingin Menghapus Data ini ?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Ya, Delete',
+        cancelButtonText: 'Batal',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var formdata = new FormData();
+            formdata.append('id', id);
+            fetch(base_url('usr/slider/delete_data'), {
+                method: 'POST',
+                body: formdata
+            }).then(response => response.json()).then(data => {
+                if (data.status == 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil',
+                        text: 'Data Berhasil Terhapus !'
+                    });
+                    document.location.reload();
+                }
+            }).catch(error => console.error(error));
+        }
+    });
+}
+
+function Edit_show_Slider(id) {
+    var formdata = new FormData();
+    formdata.append('id', id);
+    fetch(base_url('usr/slider/edit_data_show'), {
+        method: 'POST',
+        body: formdata
+    }).then(response => response.json()).then(data => {
+        $("#id_update").val(id);
+        $("#my-modal-update").modal('show');
+        $("#img_display").attr('src', base_url('public/upload/slider/' + data.data.file_img));
+        $("#title_kecil_update").val(data.data.title_kecil)
+        $("#title_besar_update").val(data.data.title_besar)
+    }).catch(error => console.error(error));
+}
+
+function update_date_slider() {
+    var form_update = document.getElementById("form_slider_update");
+    var formdata = new FormData(form_update);
+    fetch(base_url('usr/slider/update_slider'), {
+        method: 'POST',
+        body: formdata
+    }).then(response => response.json()).then(data => {
+        if (data.status == 'success') {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil',
+                text: 'Data Berhasil Terhapus !'
+            });
+            document.location.reload();
+        }
+    }).catch(error => console.error(error));
+}

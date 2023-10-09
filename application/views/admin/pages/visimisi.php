@@ -9,9 +9,9 @@
     <div class="br-pagetitle">
         <i class="icon icon ion-ios-photos-outline"></i>
         <div>
-            <h4>Informasi Data Visi Misi Museum</h4>
+            <h4>Informasi Data Visi Misi SMK Negeri 7 Medan</h4>
             <p class="mg-b-0">
-                Informasi Data Visi Misi Lengkap Museum.
+                Informasi Data Visi Misi Lengkap SMK Negeri 7 Medan.
             </p>
         </div>
     </div><!-- d-flex -->
@@ -26,7 +26,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="button-group">
-                                    <button class="btn btn-md btn-primary" onclick="add_visimisi()">
+                                    <button class="btn btn-md btn-primary" id="btn-add" onclick="add_visimisi()">
                                         <i class="fa fa-plus"></i>
                                         Tambah Data
                                     </button>
@@ -57,10 +57,12 @@
                                                 <td><?= $visimisi->misi; ?></td>
                                                 <td>
                                                     <div class="input-group">
-                                                        <button class="btn btn-md btn-warning">
+                                                        <button class="btn btn-md btn-warning"
+                                                            onclick="Edit_Show_visimisi('<?= $visimisi->id; ?>')">
                                                             <i class="fa fa-edit"></i>
                                                         </button>
-                                                        <button class="btn btn-md btn-danger">
+                                                        <button class="btn btn-md btn-danger"
+                                                            onclick="Delete_visimisi('<?= $visimisi->id; ?>')">
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                     </div>
@@ -120,6 +122,62 @@
                         <button class="btn btn-md btn-primary button-prevent" onclick="simpan_data_visimisi()">
                             <i class="fa fa-save hide-text"></i>
                             <span class="hide-text">Simpan</span>
+                            <div class="spinner" style="display: none;">
+                                <img src="<?= base_url() ?>public/admin/img/loading_2.gif" alt=""
+                                    style="width: 15%;height: 15%;">
+                                Loading..
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Update -->
+<div id="my-modal-update" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h5 class="modal-title text-white" id="my-modal-title">Update Data Visi dan Misi</h5>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post" id="form_visimisi_update" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="hidden" name="id_update" id="id_update">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Tahun Periode</label>
+                                <input type="text" name="tahun_periode_update" id="tahun_periode_update"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Visi</label>
+                                <textarea rows="10" cols="10" class="form-control" name="visi_update"
+                                    id="visi_update"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Misi</label>
+                                <div style="max-height: 500px" id="summernote_update"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-md btn-warning button-prevent" onclick="update_data_visimisi()">
+                            <i class="fa fa-save hide-text"></i>
+                            <span class="hide-text">Update</span>
                             <div class="spinner" style="display: none;">
                                 <img src="<?= base_url() ?>public/admin/img/loading_2.gif" alt=""
                                     style="width: 15%;height: 15%;">

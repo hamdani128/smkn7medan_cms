@@ -26,7 +26,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="button-group">
-                                    <button class="btn btn-md btn-primary" onclick="add_pimpinan()">
+                                    <button class="btn btn-md btn-primary" id="btn-add" onclick="add_pimpinan()">
                                         <i class="fa fa-plus"></i>
                                         Tambah Data
                                     </button>
@@ -37,7 +37,8 @@
                         <div class="row pt-5">
                             <div class="col-md-12">
                                 <div class="table-responsive">
-                                    <table id="tbl_pimpinan" class="table display table-hover nowrap" style="width: 100%;">
+                                    <table id="tbl_pimpinan" class="table display table-hover nowrap"
+                                        style="width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
@@ -49,31 +50,34 @@
                                         </thead>
                                         <tbody>
                                             <?php if (count($pimpinan) > 0) { ?>
-                                                <?php $no = 1; ?>
-                                                <?php foreach ($pimpinan as $row) { ?>
-                                                    <tr>
-                                                        <td><?= $no++; ?></td>
-                                                        <td>
-                                                            <div class="media mg-t-20 mg-b-0">
-                                                                <img src="<?= base_url() ?>public/upload/pimpinan/<?= $row->file_img; ?>" class="d-flex wd-100 rounded-circle mg-r-8" alt="Image">
-                                                                <div class="media-body">
-                                                                </div><!-- media-body -->
-                                                            </div><!-- media -->
-                                                        </td>
-                                                        <td><?= $row->nama; ?></td>
-                                                        <td><?= $row->jabatan; ?></td>
-                                                        <td>
-                                                            <div class="input-group">
-                                                                <button class="btn btn-md btn-warning" onclick="edit_pimpinan('<?= $row->id; ?>')">
-                                                                    <i class="fa fa-edit"></i>
-                                                                </button>
-                                                                <button class="btn btn-md btn-danger" onclick="delete_pimpinan('<?= $row->id; ?>', '<?= $row->nama; ?>')">
-                                                                    <i class="fa fa-trash"></i>
-                                                                </button>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
+                                            <?php $no = 1; ?>
+                                            <?php foreach ($pimpinan as $row) { ?>
+                                            <tr>
+                                                <td><?= $no++; ?></td>
+                                                <td>
+                                                    <div class="media mg-t-20 mg-b-0">
+                                                        <img src="<?= base_url() ?>public/upload/pimpinan/<?= $row->file_img; ?>"
+                                                            class="d-flex wd-100 rounded-circle mg-r-8" alt="Image">
+                                                        <div class="media-body">
+                                                        </div><!-- media-body -->
+                                                    </div><!-- media -->
+                                                </td>
+                                                <td><?= $row->nama; ?></td>
+                                                <td><?= $row->jabatan; ?></td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <button class="btn btn-md btn-warning"
+                                                            onclick="edit_pimpinan('<?= $row->id; ?>')">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                        <button class="btn btn-md btn-danger"
+                                                            onclick="delete_pimpinan('<?= $row->id; ?>', '<?= $row->nama; ?>')">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php } ?>
                                             <?php } ?>
                                         </tbody>
                                     </table>
@@ -113,11 +117,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Pimpinan</label>
-                                <input type="text" class="form-control" name="pimpinan" id="pimpinan" placeholder="Nama Pimpinan">
+                                <input type="text" class="form-control" name="pimpinan" id="pimpinan"
+                                    placeholder="Nama Pimpinan">
                             </div>
                             <div class="form-group">
                                 <label for="">Jabatan</label>
-                                <input type="text" class="form-control" name="jabatan" id="jabatan" placeholder="Jabatan Pimpinan">
+                                <input type="text" class="form-control" name="jabatan" id="jabatan"
+                                    placeholder="Jabatan Pimpinan">
                             </div>
                         </div>
                     </div>
@@ -131,7 +137,8 @@
                             <i class="fa fa-save hide-text"></i>
                             <span class="hide-text">Simpan</span>
                             <div class="spinner" style="display: none;">
-                                <img src="<?= base_url() ?>public/admin/img/loading_2.gif" alt="" style="width: 15%;height: 15%;">
+                                <img src="<?= base_url() ?>public/admin/img/loading_2.gif" alt=""
+                                    style="width: 15%;height: 15%;">
                                 Loading..
                             </div>
                         </button>
@@ -144,7 +151,8 @@
 
 
 <!-- Update Modal -->
-<div id="my-modal-edit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+<div id="my-modal-edit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header bg-warning">
@@ -167,11 +175,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Pimpinan</label>
-                                <input type="text" class="form-control" name="pimpinan_update" id="pimpinan_update" placeholder="Nama Pimpinan">
+                                <input type="text" class="form-control" name="pimpinan_update" id="pimpinan_update"
+                                    placeholder="Nama Pimpinan">
                             </div>
                             <div class="form-group">
                                 <label for="">Jabatan</label>
-                                <input type="text" class="form-control" name="jabatan_update" id="jabatan_update" placeholder="Jabatan Pimpinan">
+                                <input type="text" class="form-control" name="jabatan_update" id="jabatan_update"
+                                    placeholder="Jabatan Pimpinan">
                             </div>
                         </div>
                     </div>
@@ -180,11 +190,13 @@
             <div class="modal-footer">
                 <div class="row">
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-md btn-warning button-prevent" onclick="update_data_pimpinan()">
+                        <button type="button" class="btn btn-md btn-warning button-prevent"
+                            onclick="update_data_pimpinan()">
                             <i class="fa fa-save hide-text"></i>
                             <span class="hide-text">Update</span>
                             <div class="spinner" style="display: none;">
-                                <img src="<?= base_url() ?>public/admin/img/loading_2.gif" alt="" style="width: 15%;height: 15%;">
+                                <img src="<?= base_url() ?>public/admin/img/loading_2.gif" alt=""
+                                    style="width: 15%;height: 15%;">
                                 Loading..
                             </div>
                         </button>

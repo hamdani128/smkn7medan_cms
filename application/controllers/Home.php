@@ -23,7 +23,7 @@ class Home extends CI_Controller
             'title' => 'SMK Negeri 7 Medan',
             'content' => "landing/index",
             // 'data_etiket' => $json,
-            // 'slider' => $this->M_slider->getData(),
+            'slider' => $this->M_slider->getData(),
             // 'profile' => $this->M_profile->getData(),
             // 'berita' => $this->M_berita->getData_toHome(),
             // 'koleksigroup' => $this->M_koleksi->getkategori(),

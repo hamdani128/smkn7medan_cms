@@ -11,7 +11,7 @@ class Visimisi extends CI_Controller
         $this->session->sess_expiration = '60';
         $this->session->sess_expire_on_close = 'true';
         if ($this->session->userdata('log_in') != "login") {
-            redirect(base_url("admin/login"));
+            redirect(base_url("usr/login"));
         }
     }
 
@@ -56,5 +56,74 @@ class Visimisi extends CI_Controller
             );
         }
         echo json_encode($response);
+    }
+
+
+    public function delete_data()
+    {
+        $id = $this->input->post('id');
+        $query = $this->db->where('id', $id)->delete('visimisi');
+        if ($query) {
+            $response = [
+                'status' => 'success',
+                'message' => 'Successfully Deleted'
+            ];
+        } else {
+            $response = [
+                'status' => 'error',
+                'message' => 'Error Successfully Deleted',
+            ];
+        }
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+    }
+
+    public function show_edit()
+    {
+        $id = $this->input->post('id');
+        $row = $this->db->where('id', $id)->get('visimisi')->row();
+        $data = [
+            'tahun' => $row->tahun_periode,
+            'visi' => $row->visi,
+            'misi' => $row->misi,
+        ];
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($data));
+    }
+
+    public function update_data()
+    {
+        $id = $this->input->post("id_update");
+        $tahun = $this->input->post("tahun_periode_update");
+        $visi = $this->input->post("visi_update");
+        $misi = $this->input->post("summernoteValue");
+        $user_id = $this->session->userdata("user_id");
+
+        $data = [
+            'tahun_periode' => $tahun,
+            'visi' => $visi,
+            'misi' => $misi,
+            'user_id' => $user_id,
+            'updated_at' => $user_id,
+        ];
+
+        $query = $this->db->where('id', $id)->update('visimisi', $data);
+
+        if ($query) {
+            $response = [
+                'status' => 'success',
+                'message' => 'Successfully Updated '
+            ];
+        } else {
+            $response = [
+                'status' => 'error',
+                'message' => 'Error Successfully Updated',
+            ];
+        }
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
     }
 }

@@ -10,7 +10,7 @@ class Koleksi extends CI_Controller
         $this->session->sess_expiration = '60';
         $this->session->sess_expire_on_close = 'true';
         if ($this->session->userdata('log_in') != "login") {
-            redirect(base_url("admin/login"));
+            redirect(base_url("usr/login"));
         }
     }
 
