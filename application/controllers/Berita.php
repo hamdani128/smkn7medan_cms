@@ -46,7 +46,7 @@ class Berita extends CI_Controller
             $this->load->view('landing/layout/content', $data);
         } else {
             $data = [
-                'title' => 'Museum Negeri Sumatera Utara',
+                'title' => "SMK Negeri 7 Medan",
                 'berita' => $this->M_berita->get_published($limit, $offset),
                 'kategoriberita' => $this->M_berita->KategoriBerita(),
                 'content' => "landing/berita/berita",

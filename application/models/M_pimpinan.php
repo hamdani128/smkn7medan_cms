@@ -6,6 +6,6 @@ class M_pimpinan extends CI_Model
 
     function getData()
     {
-        return $this->db->get($this->tbl_pimpinan)->result();
+        return $this->db->order_by('id', 'asc')->get($this->tbl_pimpinan)->row();
     }
 }

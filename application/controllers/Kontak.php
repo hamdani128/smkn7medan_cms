@@ -13,7 +13,7 @@ class Kontak extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'App Museum | Kontak',
+            'title' => "SMK Negeri 7 Medan",
             // 'profile' => $this->M_profile->getData(),
             'content' => "landing/kontak",
         ];

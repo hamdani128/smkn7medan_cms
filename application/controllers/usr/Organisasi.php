@@ -18,7 +18,7 @@ class Organisasi extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => "Admin - Museum",
+            'title' => "SMK Negeri 7 Medan",
             'content' => 'admin/pages/organisasi',
             'organisasi' => $this->M_organisasi->getData(),
         ];

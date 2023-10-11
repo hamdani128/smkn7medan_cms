@@ -11,7 +11,7 @@
         <div>
             <h4>Informasi Data Struktur Organisasi</h4>
             <p class="mg-b-0">
-                Informasi Data Struktur Organisasi Museum.
+                Informasi Data Struktur Organisasi SMK Negeri 7 Medan.
             </p>
         </div>
     </div><!-- d-flex -->

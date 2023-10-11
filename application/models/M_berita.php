@@ -21,7 +21,7 @@ class M_berita extends CI_Model
 
     function getData()
     {
-        return $this->db->get($this->table_berita)->result();
+        return $this->db->order_by('id', 'DESC')->get($this->table_berita)->result();
     }
 
     function getData_toHome()

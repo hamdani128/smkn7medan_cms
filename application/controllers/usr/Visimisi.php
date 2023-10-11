@@ -18,7 +18,7 @@ class Visimisi extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => "Admin - Museum",
+            'title' => "SMK Negeri 7 Medan",
             'content' => 'admin/pages/visimisi',
             'visimisi' => $this->M_visimisi->getData(),
         ];

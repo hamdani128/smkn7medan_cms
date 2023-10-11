@@ -11,8 +11,8 @@ class Koleksi extends CI_Controller
 
     public function arkoelogi()
     {
-        $data = [
-            'title' => 'App Museum',
+        $data = [,
+            'title' => "SMK Negeri 7 Medan",
             'tital_halaman' => 'Arkoelogi',
             'content' => "landing/koleksi/arkeologi",
             'koleksidata' => $this->M_koleksi->getArkeologi(),
@@ -34,7 +34,7 @@ class Koleksi extends CI_Controller
     public function geografi()
     {
         $data = [
-            'title' => 'App Museum',
+            'title' => "SMK Negeri 7 Medan",
             'tital_halaman' => 'Geografi',
             'content' => "landing/koleksi/geografi",
             'koleksidata' => $this->M_koleksi->getGeografi(),

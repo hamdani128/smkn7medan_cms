@@ -49,3 +49,7 @@ function login_administrator() {
     }
 
 }
+
+function back_to_home() {
+    document.location.href = base_url('home');
+}

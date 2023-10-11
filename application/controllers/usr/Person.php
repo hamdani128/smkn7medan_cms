@@ -17,7 +17,7 @@ class Person extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => "Admin - Person",
+            'title' => "SMK Negeri 7 Medan",
             'person' => $this->db->where_not_in('level', 'Super Admin')->get('users')->result(),
             'content' => 'admin/pages/person',
         ];

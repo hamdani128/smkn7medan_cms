@@ -12,24 +12,13 @@
                                     <h2>Informasi Tentang Sekolah</h2>
                                 </div>
                                 <!-- End Title -->
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum pariatur fuga
-                                    eveniet soluta aspernatur rem, nam voluptatibus voluptate voluptates sapiente,
-                                    inventore. Voluptatem, maiores esse molestiae.</p>
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                                    <li>Saepe a minima quod iste libero rerum dicta!</li>
-                                    <li>Voluptas obcaecati, iste porro fugit soluta consequuntur. Veritatis?</li>
-                                    <li>Ipsam deserunt numquam ad error rem unde, omnis.</li>
-                                    <li>Repellat assumenda adipisci pariatur ipsam eos similique, explicabo.</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quaerat
-                                    harum facilis excepturi et? Mollitia!</p>
+                                <?= $profile->deskripsi; ?>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="mu-about-us-right">
-                                <a id="mu-abtus-video" href="https://www.youtube.com/embed/HN3pm9qYAUs" target="mutube-video">
-                                    <img src="<?= base_url() ?>public/landing/img/about-us.jpg" alt="img">
+                                <a id="mu-abtus-video" href="https://www.youtube.com/embed/FE5ogSYvfZ8" target="mutube-video">
+                                    <img src="<?= base_url() ?>public/upload/profile/<?= $profile->file_img; ?>" alt="img">
                                 </a>
                             </div>
                         </div>

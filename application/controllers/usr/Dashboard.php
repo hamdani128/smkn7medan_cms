@@ -17,7 +17,7 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => "Admin - Museum",
+            'title' => "SMK Negeri 7 Medan",
             'content' => 'admin/pages/index',
         ];
         $this->load->view('admin/layout/content', $data);

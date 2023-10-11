@@ -18,7 +18,7 @@ class Galeri extends CI_Controller
     {
         $kegiatan = $this->db->get("kegiatan_photo")->result();
         $data = [
-            'title' => "Admin - Museum | Galeri Photo Kegiatan",
+            'title' => "SMK Negeri 7 Medan",
             'content' => 'admin/pages/kegiatan',
             'kegiatan' => $kegiatan,
         ];

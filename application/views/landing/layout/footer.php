@@ -5,52 +5,34 @@
             <div class="container">
                 <div class="mu-footer-top-area">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="mu-footer-widget">
-                                <h4>Information</h4>
-                                <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="">Features</a></li>
-                                    <li><a href="">Course</a></li>
-                                    <li><a href="">Event</a></li>
-                                    <li><a href="">Sitemap</a></li>
-                                    <li><a href="">Term Of Use</a></li>
-                                </ul>
+                                <h4>Kontak Kami</h4>
+                                <address>
+                                    <p>Jalan STM 12 20147 Kota Medan Sumatera Utara . 3,3 km</p>
+                                    <p>Phone: 061-7862938 </p>
+                                    <p>Website: https://smkn7medan.sch.id/</p>
+                                    <p>Email: info@smkn7medan.sch.id</p>
+                                </address>
+                                <div class="card">
+                                    <div class="car-body">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.1637960287717!2d98.68873237497296!3d3.549683496424548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30313071cb4fa403%3A0xe1993ab42f03aad5!2sSekolah%20Menengah%20Kejuruan%20Negeri%207%20Medan!5e0!3m2!1sid!2sid!4v1697038479118!5m2!1sid!2sid" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
+
+                        <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="mu-footer-widget">
-                                <h4>Student Help</h4>
-                                <ul>
-                                    <li><a href="">Get Started</a></li>
-                                    <li><a href="#">My Questions</a></li>
-                                    <li><a href="">Download Files</a></li>
-                                    <li><a href="">Latest Course</a></li>
-                                    <li><a href="">Academic News</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                            <div class="mu-footer-widget">
-                                <h4>News letter</h4>
-                                <p>Get latest update, news & academic offers</p>
+                                <h4>Subcriber</h4>
+                                <p>E-mail</p>
                                 <form class="mu-subscribe-form">
                                     <input type="email" placeholder="Type your Email">
                                     <button class="mu-subscribe-btn" type="submit">Subscribe!</button>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                            <div class="mu-footer-widget">
-                                <h4>Contact</h4>
-                                <address>
-                                    <p>P.O. Box 320, Ross, California 9495, USA</p>
-                                    <p>Phone: (415) 453-1568 </p>
-                                    <p>Website: www.markups.io</p>
-                                    <p>Email: info@markups.io</p>
-                                </address>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -60,8 +42,7 @@
         <div class="mu-footer-bottom">
             <div class="container">
                 <div class="mu-footer-bottom-area">
-                    <p>&copy; All Right Reserved. Designed by <a href="http://www.markups.io/"
-                            rel="nofollow">MarkUps.io</a></p>
+                    <p>&copy;2023 <a href="<?= base_url(); ?>" rel="nofollow">SMK NEGERI 7 Medan</a></p>
                 </div>
             </div>
         </div>
@@ -82,8 +63,13 @@
     <script type="text/javascript" src="<?= base_url() ?>public/landing/js/jquery.mixitup.js"></script>
     <!-- Add fancyBox -->
     <script type="text/javascript" src="<?= base_url() ?>public/landing/js/jquery.fancybox.pack.js"></script>
+    <!-- Angular -->
+    <script src="<?= base_url() ?>public/landing/angular/angular.js"></script>
+    <script src="<?= base_url() ?>public/landing/angular/angular.min.js"></script>
+    <script src="<?= base_url() ?>public/landing/angular/angular-datatables.min.js"></script>
     <!-- Custom js -->
     <script src="<?= base_url() ?>public/landing/js/custom.js"></script>
+    <script src="<?= base_url() ?>public/landing/custom/home.js"></script>
 
     </body>
 

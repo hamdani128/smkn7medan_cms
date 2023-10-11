@@ -11,7 +11,7 @@
         <div>
             <h4>Informasi Data Berita</h4>
             <p class="mg-b-0">
-                Informasi Data Berita Seluruh Kegiatan Museum.
+                Informasi Data Berita dan Aktivitas.
             </p>
         </div>
     </div><!-- d-flex -->
@@ -66,11 +66,10 @@
                                                         </div><!-- media-body -->
                                                     </div><!-- media -->
                                                 </td>
-                                                <td><?= substr($row->judul, 0, 50) . "..."; ?></td>
+                                                <td><?= substr($row->judul, 0, 0) . "..."; ?></td>
                                                 <td><?= $row->tanggal; ?></td>
                                                 <td>
-                                                    <p style="text-align: justify;">
-                                                        <?= substr($row->detail_1, 400, 50) . "..." ?></p>
+                                                    <?= substr($row->detail_1, 0, 0) . "..." ?>
                                                 </td>
                                                 <td><?= $row->penulis; ?></td>
                                                 <td>

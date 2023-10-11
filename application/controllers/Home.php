@@ -16,16 +16,13 @@ class Home extends CI_Controller
 
     public function index()
     {
-        // $url = "http://localhost/etiket/api/transaksi";
-        // $data_url = file_get_contents($url);
-        // $json = json_decode($data_url, true);
         $data = [
             'title' => 'SMK Negeri 7 Medan',
             'content' => "landing/index",
-            // 'data_etiket' => $json,
             'slider' => $this->M_slider->getData(),
-            // 'profile' => $this->M_profile->getData(),
-            // 'berita' => $this->M_berita->getData_toHome(),
+            'profile' => $this->M_profile->getData(),
+            'pimpinan' => $this->M_pimpinan->getData(),
+            'jurusan' => $this->db->get('jurusan')->result(),
             // 'koleksigroup' => $this->M_koleksi->getkategori(),
             // 'koleksidata' => $this->M_koleksi->getData(),
             // 'zonadata' => $this->db->get("zona_integritas")->result(),
@@ -62,7 +59,7 @@ class Home extends CI_Controller
     {
         $berita = $this->db->limit(5, 0)->order_by('created_at', 'DESC')->get('berita')->result();
         $data = [
-            'title' => 'Museum Negeri Sumatera Utara',
+            'title' => 'SMK Negeri 7 Medan',
             'pimpinan' => $this->M_pimpinan->getData(),
             'berita' => $berita,
             'kategoriberita' => $this->M_berita->KategoriBerita(),
@@ -118,5 +115,13 @@ class Home extends CI_Controller
             'redirect_url' => base_url('home/berita_detail?id=' . $id) // or whatever URL you want to redirect to
         ];
         $this->load->view('landing/layout/content', $data);
+    }
+
+    public function getdata_berita()
+    {
+        $data = $this->M_berita->getData();
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($data));
     }
 }

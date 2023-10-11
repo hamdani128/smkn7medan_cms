@@ -9,9 +9,9 @@
     <div class="br-pagetitle">
         <i class="icon icon ion-ios-photos-outline"></i>
         <div>
-            <h4>Informasi Data Koleksi Museum</h4>
+            <h4>Informasi Data Koleksi </h4>
             <p class="mg-b-0">
-                Informasi Data Pengelolaan Data Lengkap Kelimuan Museum.
+                Informasi Data Pengelolaan Data Lengkap Kelimuan SMK Negeri 7 Medan.
             </p>
         </div>
     </div><!-- d-flex -->

@@ -16,7 +16,7 @@ class Agenda extends CI_Controller
         $offset = $this->uri->segment(3) ? $this->uri->segment(3) : 0;
         $search = $this->input->get('search');
         $data = [
-            'title' => 'App Museum',
+            'title' => "SMK Negeri 7 Medan",
             'tital_halaman' => 'Arkoelogi',
             'content' => "landing/agenda/survei",
             'surveidata' => $this->M_agenda->PaginateSurvei($limit, $offset, $search),

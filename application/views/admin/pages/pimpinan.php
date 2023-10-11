@@ -49,35 +49,33 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if (count($pimpinan) > 0) { ?>
+                                            <?php if (!empty($pimpinan)) { ?>
                                             <?php $no = 1; ?>
-                                            <?php foreach ($pimpinan as $row) { ?>
                                             <tr>
                                                 <td><?= $no++; ?></td>
                                                 <td>
                                                     <div class="media mg-t-20 mg-b-0">
-                                                        <img src="<?= base_url() ?>public/upload/pimpinan/<?= $row->file_img; ?>"
+                                                        <img src="<?= base_url() ?>public/upload/pimpinan/<?= $pimpinan->file_img; ?>"
                                                             class="d-flex wd-100 rounded-circle mg-r-8" alt="Image">
                                                         <div class="media-body">
                                                         </div><!-- media-body -->
                                                     </div><!-- media -->
                                                 </td>
-                                                <td><?= $row->nama; ?></td>
-                                                <td><?= $row->jabatan; ?></td>
+                                                <td><?= $pimpinan->nama; ?></td>
+                                                <td><?= $pimpinan->jabatan; ?></td>
                                                 <td>
                                                     <div class="input-group">
                                                         <button class="btn btn-md btn-warning"
-                                                            onclick="edit_pimpinan('<?= $row->id; ?>')">
+                                                            onclick="edit_pimpinan('<?= $pimpinan->id; ?>')">
                                                             <i class="fa fa-edit"></i>
                                                         </button>
                                                         <button class="btn btn-md btn-danger"
-                                                            onclick="delete_pimpinan('<?= $row->id; ?>', '<?= $row->nama; ?>')">
+                                                            onclick="delete_pimpinan('<?= $pimpinan->id; ?>', '<?= $pimpinan->nama; ?>')">
                                                             <i class="fa fa-trash"></i>
                                                         </button>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <?php } ?>
                                             <?php } ?>
                                         </tbody>
                                     </table>

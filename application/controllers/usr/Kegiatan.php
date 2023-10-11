@@ -18,7 +18,7 @@ class Kegiatan extends CI_Controller
     public function survei()
     {
         $data = [
-            'title' => "Admin - Museum | Survei",
+            'title' => "SMK Negeri 7 Medan",
             'content' => 'admin/pages/survei',
             'surveidata' => $this->db->get("survei")->result(),
         ];

@@ -17,7 +17,7 @@ class Zona_integritas extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => "Admin - Museum",
+            'title' => "SMK Negeri 7 Medan",
             'content' => 'admin/pages/zona_integritas',
             'zonadata' => $this->db->get("zona_integritas")->result(),
         ];

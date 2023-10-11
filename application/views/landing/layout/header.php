@@ -17,7 +17,8 @@
     <!-- Slick slider -->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>public/landing/css/slick.css">
     <!-- Fancybox slider -->
-    <link rel="stylesheet" href="<?= base_url() ?>public/landing/css/jquery.fancybox.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="<?= base_url() ?>public/landing/css/jquery.fancybox.css" type="text/css"
+        media="screen" />
     <!-- Theme color -->
     <link id="switcher" href="<?= base_url() ?>public/landing/css/theme-color/default-theme.css" rel="stylesheet">
 
@@ -27,7 +28,8 @@
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700' rel='stylesheet'
+        type='text/css'>
 
 
 </head>
@@ -51,11 +53,11 @@
                                 <div class="mu-header-top-left">
                                     <div class="mu-top-email">
                                         <i class="fa fa-envelope"></i>
-                                        <span>info@markups.io</span>
+                                        <span>info@smkn7medan.sch.id</span>
                                     </div>
                                     <div class="mu-top-phone">
                                         <i class="fa fa-phone"></i>
-                                        <span>(568) 986 652</span>
+                                        <span>061-7862938</span>
                                     </div>
                                 </div>
                             </div>

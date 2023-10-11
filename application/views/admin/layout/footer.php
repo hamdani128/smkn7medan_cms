@@ -41,6 +41,7 @@
 <script src="<?= base_url() ?>public/admin/custom/kegiatan.js"></script>
 <script src="<?= base_url() ?>public/admin/custom/person.js"></script>
 <script src="<?= base_url() ?>public/admin/custom/pengumuman.js"></script>
+<script src="<?= base_url() ?>public/admin/custom/usr_jurusan.js"></script>
 <!-- Summar Note -->
 <script src="<?= base_url() ?>public/admin/lib/summernote/summernote-bs4.min.js"></script>
 <script src="<?= base_url() ?>public/admin/lib/medium-editor/js/medium-editor.min.js"></script>

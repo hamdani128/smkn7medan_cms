@@ -56,9 +56,11 @@
                     placeholder="Enter your password">
                 <a href="" class="tx-info tx-12 d-block mg-t-10">Forgot password?</a>
             </div><!-- form-group -->
-            <button type="button" class="btn btn-info btn-block" onclick="login_administrator()">Sign In</button>
-
-            <div class="mg-t-60 tx-center">Not yet a member? <a href="" class="tx-info">Sign Up</a></div>
+            <button type="button" class="btn btn-info btn-block" onclick="login_administrator()">
+                Log In
+            </button>
+            <button type="button" class="btn btn-dark btn-block" onclick="back_to_home()">Back to Home</button>
+            <!-- <div class="mg-t-60 tx-center">Not yet a member? <a href="" class="tx-info">Sign Up</a></div> -->
         </div><!-- login-wrapper -->
     </div><!-- d-flex -->
 
